@@ -1,7 +1,7 @@
 console.log('Starting up');
 'use strict';
 
-
+// prog obj list
 var gProjs = [{
         id: '0',
         name: 'minesweeper',
@@ -9,7 +9,7 @@ var gProjs = [{
         desc: 'this is minesweeper game, 3 levels - on each level........',
         url: "img/portfolio/10-full.jpg",
         publishedAt: getTime(),
-        labels: ['matrix', 'logic'],
+        labels: ['matrix', 'logic', ],
         projGitHubLink: "https://yotam920.github.io/Mine-sweeper-/"
     },
     {
@@ -23,18 +23,15 @@ var gProjs = [{
         projGitHubLink: "https://yotam920.github.io/chess-game/"
     }, {
         id: '2',
-        name: 'bookShop',
-        title: 'book shop',
-        desc: 'this is an online book-shop ',
-        url: "img/portfolio/09-full.jpg",
+        name: 'volunteer',
+        title: 'volunteer',
+        desc: 'this is a world volunteery app',
+        url: "img/portfolio/11-full.jpg",
         publishedAt: getTime(),
-        labels: ['matrix', 'logic'],
-        projGitHubLink: "https://yotam920.github.io/Mine-sweeper-/"
+        labels: ['matrix', 'logic', 'Vue', 'node.js'],
+        projGitHubLink: "https://world-volunteery.herokuapp.com/#/"
     }
 ];
-
-
-
 
 
 function randerProjs() {
@@ -58,10 +55,7 @@ function randerProjs() {
     document.querySelector('.projects-container').innerHTML = strHTML.join('');
 }
 
-
-
 function randerModal(projId) {
-    //console.log('projID:', projId);
     var proj = gProjs[projId];
     console.log('obj:', proj);
     var strHTML =
@@ -85,12 +79,13 @@ function randerModal(projId) {
     document.querySelector('.modal-container').innerHTML = strHTML;
 }
 
-
+// 
 function renderSendBtn() {
     var strHtml = `<button class="btn btn-sendMsg" onclick="onSendMsg()">Send</button></a>`;
     $('.send-btn').html(strHtml);
 }
 
+// Send Msg to my e-mail
 function onSendMsg() {
     var email = $('.email-adress').val();
     var subject = $('.subject-msg').val();
